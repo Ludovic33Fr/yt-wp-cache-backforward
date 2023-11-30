@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Page éligible au Back forward cache</title>
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur la Page éligible au Back forward cache</h1>
+    </header>
+    <main>
+        <div>
+            <p>Cette page est éligible au Back forward cache.</p>
+            <p>Elle contient : </p>
+            <ul>
+                <li>du contenu dynamique</li>
+                <li>une images</li>
+                <li>un style CSS</li>
+            </ul>
+        </div>
+        <img src="https://source.unsplash.com/collection/94734566/1920x1080" alt="Image 1">
+        <p><a href="/">Retour à l'index</a></p>
+    </main>
+    <script>
+        window.addEventListener('pagehide', console.log("This page was hidden :)"));
+
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                console.log('This page was restored from the bfcache.');
+            } else {
+                console.log('This page was loaded normally.');
+            }
+        });
+    </script>
+</body>
+</html>

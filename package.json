@@ -1,0 +1,15 @@
+{
+  "name": "yt-wp-cache-backforward",
+  "version": "1.0.0",
+  "description": "Website test to display how to opitimize backforward cache",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Ludovic LEFEBVE",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
